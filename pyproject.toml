@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ensembleforge"
+version = "0.1.0"
+description = "自动化集成学习系统：Ensemble Selection + Stacked Generalization（纯 numpy/sklearn 离线可跑）"
+authors = [{ name = "晨星", email = "CJX0712@users.noreply.github.com" }]
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.5.3", "scikit-learn>=1.9.1"]
+readme = "README.md"
+license = { text = "MIT" }
+
+[tool.setuptools.packages.find]
+include = ["ensembleforge*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q -W ignore::UserWarning"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.format]
+quote-style = "double"
